@@ -1,0 +1,85 @@
+/* zimzim / quiet motion */
+@keyframes pageIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pageOut { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-10px); } }
+@keyframes washOut { from { opacity: 0; transform: translateY(100%); } 55% { opacity: 1; transform: translateY(0); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(23px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeScale { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: scale(1); } }
+@keyframes draw { from { stroke-dashoffset: 1000; } to { stroke-dashoffset: 0; } }
+@keyframes handArrive { from { opacity: 0; transform: translateY(14px) scale(.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes drift { 0%, 100% { transform: translate3d(0,0,0); } 50% { transform: translate3d(8px,-7px,0); } }
+@keyframes ringDrift { 0%, 100% { transform: rotate(-18deg) translate3d(0,0,0); } 50% { transform: rotate(-13deg) translate3d(6px,-4px,0); } }
+@keyframes breathe { 0%, 100% { opacity: .48; transform: scale(.96); } 50% { opacity: .95; transform: scale(1.04); } }
+@keyframes cardRise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes scan { from { transform: translateY(-90px); opacity: 0; } 25% { opacity: .48; } to { transform: translateY(430px); opacity: 0; } }
+@keyframes promptPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(191,114,91,.2); } 50% { box-shadow: 0 0 0 7px rgba(191,114,91,0); } }
+@keyframes helpOpen { from { opacity: 0; transform: translateY(-7px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes generatedIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+body { animation: pageIn .65s var(--ease) both; }
+body.is-leaving { animation: pageOut .4s var(--ease) both; pointer-events: none; }
+.route-wash { position: fixed; z-index: 100; inset: 0; pointer-events: none; background: var(--deep-sage); opacity: 0; transform: translateY(100%); }
+body.is-leaving .route-wash { animation: washOut .48s var(--ease) both; }
+
+/* Arrival choreography */
+.page-welcome .welcome-shell::before { animation: drift 15s ease-in-out infinite; }
+.page-welcome .orbit-a, .page-welcome .orbit-b { animation: drift 18s ease-in-out infinite; }.page-welcome .orbit-b { animation-delay: -8s; }
+.page-welcome .welcome-copy .eyebrow { animation: slideUp .75s .18s var(--ease) both; }
+.page-welcome .welcome-copy h1 { animation: slideUp .9s .3s var(--ease) both; }
+.page-welcome .welcome-lede { animation: slideUp .75s .5s var(--ease) both; }
+.page-welcome .welcome-details { animation: slideUp .75s .65s var(--ease) both; }
+.page-welcome .welcome-cta { animation: slideUp .75s .82s var(--ease) both; }
+.page-welcome .gesture-card { animation: fadeScale .95s .16s var(--ease) both; }
+.page-welcome .gesture-grid { animation: drift 12s -3s ease-in-out infinite; }
+.page-welcome .ring-one { animation: ringDrift 15s ease-in-out infinite; }.page-welcome .ring-two { animation: ringDrift 15s -6s ease-in-out infinite reverse; }
+.page-welcome .gesture-image { animation: handArrive 1.2s .32s var(--ease) both; transform-origin: 50% 90%; }.page-welcome .hand-ink { animation: handArrive 1.2s .32s var(--ease) both; transform-origin: 50% 90%; }.page-welcome .hand-ink path { stroke-dasharray: 1100; animation: draw 2.3s .42s var(--ease) both; }
+.page-welcome .hand-detail path { stroke-dasharray: 180; animation: draw 1.4s .95s var(--ease) both; }.page-welcome .hand-hatch path { stroke-dasharray: 55; animation: draw 1.2s 1.28s var(--ease) both; }.page-welcome .gesture-dots circle { animation: breathe 3s ease-in-out infinite; transform-origin: center; }.page-welcome .gesture-dots circle:nth-child(2) { animation-delay: -1.2s; }.page-welcome .gesture-dots circle:nth-child(3) { animation-delay: -2.1s; }
+.page-welcome .gesture-caption { animation: slideUp .75s 1.1s var(--ease) both; }.page-welcome .welcome-footer { animation: fadeIn .8s 1.1s ease both; }
+
+/* Vibe choreography */
+.page-vibes .vibe-shell::after { animation: drift 16s ease-in-out infinite; }.page-vibes .vibe-orb-one { animation: drift 19s ease-in-out infinite; }.page-vibes .vibe-orb-two { animation: drift 21s -9s ease-in-out infinite reverse; }
+.page-vibes .vibe-intro .eyebrow { animation: slideUp .65s .16s var(--ease) both; }.page-vibes .vibe-intro h1 { animation: slideUp .78s .29s var(--ease) both; }.page-vibes .vibe-intro > p:last-child { animation: slideUp .75s .44s var(--ease) both; }.page-vibes .vibe-rule { animation: fadeIn .8s .6s ease both; }
+.page-vibes .stagger-in { animation: cardRise .78s var(--ease) both; }.page-vibes .stagger-in:nth-child(1) { animation-delay: .64s; }.page-vibes .stagger-in:nth-child(2) { animation-delay: .86s; }.page-vibes .stagger-in:nth-child(3) { animation-delay: 1.08s; }.page-vibes .vibe-footer { animation: fadeIn .7s 1.35s ease both; }
+.page-vibes .vibe-alpha:hover::after, .page-vibes .vibe-alpha:focus-visible::after { animation: scan 1.2s ease-out; }.page-vibes .vibe-genz:hover .vibe-card-action b, .page-vibes .vibe-genz:focus-visible .vibe-card-action b { animation: breathe 1s ease-in-out infinite; }
+
+/* Workspace choreography */
+.page-workspace .workspace-welcome .eyebrow { animation: slideUp .65s .15s var(--ease) both; }.page-workspace .workspace-welcome h1 { animation: slideUp .8s .28s var(--ease) both; }.page-workspace .workspace-welcome > div:first-child > p:last-child { animation: slideUp .7s .45s var(--ease) both; }.page-workspace .workspace-date { animation: fadeScale .75s .5s var(--ease) both; }
+.page-workspace .workspace-card:nth-child(1) { animation: fadeScale .8s .55s var(--ease) both; }.page-workspace .workspace-card:nth-child(2) { animation: fadeScale .8s .7s var(--ease) both; }.page-workspace .workspace-lower { animation: slideUp .7s .9s var(--ease) both; }.page-workspace .workspace-note { animation: fadeIn .7s 1.1s ease both; }
+
+/* Labs */
+.page-script .script-heading .eyebrow, .page-calendar .calendar-heading .eyebrow { animation: slideUp .65s .14s var(--ease) both; }.page-script .script-heading h1, .page-calendar .calendar-heading h1 { animation: slideUp .8s .28s var(--ease) both; }.page-script .script-heading > div:first-child > p:last-child, .page-calendar .calendar-heading > div:first-child > p:last-child { animation: slideUp .75s .45s var(--ease) both; }.page-script .lab-steps, .page-calendar .calendar-note { animation: fadeIn .75s .55s ease both; }
+.page-script .brief-card { animation: fadeScale .75s .55s var(--ease) both; }.page-script .output-card { animation: fadeScale .75s .7s var(--ease) both; }.page-script .prompt-strip { animation: slideUp .65s .9s var(--ease) both; }
+.page-calendar .calendar-card { animation: fadeScale .75s .58s var(--ease) both; }.page-calendar .question-card { animation: fadeScale .75s .45s var(--ease) both; }.page-calendar .planning-tip { animation: slideUp .65s .75s var(--ease) both; }.page-calendar .calendar-bottom { animation: slideUp .65s .9s var(--ease) both; }
+.generated-script { animation: generatedIn .45s var(--ease) both; }.suggestion-result { animation: fadeIn .4s ease both; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .route-wash { display: none; }
+}
+
+@keyframes purpleSparkleDrift {
+  0%, 100% { transform: translate3d(0, 0, 0); opacity: .72; }
+  50% { transform: translate3d(0, -8px, 0); opacity: .96; }
+}
+.page-welcome .gesture-image { animation: handArrive 1.25s .28s var(--ease) both; }
+.page-welcome .gesture-card::before { animation: breathe 4s ease-in-out infinite; }
+.page-welcome .welcome-copy .eyebrow { animation: slideUp .65s .52s var(--ease) both; }
+.page-welcome .welcome-copy h1 { animation: slideUp .78s .65s var(--ease) both; }
+.page-welcome .welcome-lede { animation: slideUp .7s .82s var(--ease) both; }
+.page-welcome .welcome-details { animation: slideUp .65s .94s var(--ease) both; }
+.page-welcome .welcome-cta { animation: slideUp .65s 1.03s var(--ease) both; }
+.page-welcome .gesture-caption { animation: fadeIn .75s 1.04s ease both; }
+
+@keyframes warmSparkleDrift {
+  0%, 100% { transform: translate3d(0, 0, 0); opacity: .72; }
+  50% { transform: translate3d(0, -8px, 0); opacity: .96; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-welcome .welcome-shell::before,
+  .page-welcome .gesture-card::before,
+  .page-welcome .gesture-image,
+  .page-welcome .welcome-copy > * {
+    animation: none !important;
+  }
+}

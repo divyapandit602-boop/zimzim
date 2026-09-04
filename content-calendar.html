@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f2eb">
+  <meta name="description" content="A gentle content calendar that helps you choose what to shoot next.">
+  <title>zimzim — Content Calendar</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="animations.css">
+</head>
+<body class="page-calendar" data-page="calendar">
+  <a class="skip-link" href="#calendar-content">Skip to content</a>
+  <div class="route-wash" aria-hidden="true"></div>
+  <div class="studio-shell">
+    <header class="studio-topbar page-pad"><div class="topbar-left"><a class="wordmark" href="index.html" aria-label="zimzim home">zimzim</a><span class="crumb-line"></span><a href="content-studio.html" class="topbar-crumb page-link" data-transition>workspace</a><span class="crumb-slash">/</span><strong>content calendar</strong></div><nav class="topbar-nav" aria-label="Studio navigation"><a href="script-studio.html" class="page-link" data-transition>Script Lab</a><a class="is-current" href="content-calendar.html">Content Calendar</a><button class="vibe-chip" type="button" data-change-vibe><i></i><span data-vibe-name>Millennial</span><b>change</b></button></nav></header>
+
+    <main id="calendar-content" class="calendar-main page-pad">
+      <section class="calendar-heading reveal-up"><div><p class="eyebrow"><span></span> zimzim / gentle planning</p><h1>Plan your next<br><em>shoot day.</em></h1><p>Tell us what you know. If you know nothing yet, that is a perfectly good place to begin.</p></div><div class="calendar-note"><span>THE NEXT KIND<br>OF DEADLINE</span><b>→</b></div></section>
+
+      <section class="planning-layout">
+        <div class="planning-column reveal-fade">
+          <div class="question-card">
+            <div class="question-number">01</div><span class="small-label">FIRST, A SIMPLE QUESTION</span><h2>When do you want<br>to shoot?</h2><p>Pick a day that gives your idea enough breathing room.</p>
+            <label class="field-label" for="shoot-date">Your shoot date</label><input class="date-input" id="shoot-date" type="date" value="2026-09-03">
+            <div class="question-actions"><button class="button button-solid" type="button" data-confirm-date>Use this date <span>↗</span></button><button class="text-button" type="button" data-need-help>I don't know yet <span>?</span></button></div>
+          </div>
+          <div class="helper-card" id="calendar-helper" aria-hidden="true">
+            <div class="helper-heading"><span class="small-label">NO PRESSURE</span><button type="button" class="close-helper" data-close-help aria-label="Close date helper">×</button></div><h2>Let's find a gentle date.</h2><p>Answer what you can. We will suggest a starting point, not a rule.</p>
+            <label class="field-label">How often can you create?</label><div class="choice-row helper-choice" data-helper-field="pace"><button type="button" class="choice is-selected" data-value="weekly">Every week</button><button type="button" class="choice" data-value="fortnightly">Every 2 weeks</button><button type="button" class="choice" data-value="monthly">Once a month</button></div>
+            <label class="field-label">Which days feel easiest?</label><div class="choice-row helper-choice" data-helper-field="day"><button type="button" class="choice is-selected" data-value="weekend">Weekend</button><button type="button" class="choice" data-value="weekday">Weekday</button><button type="button" class="choice" data-value="any">Any day</button></div>
+            <button type="button" class="button button-terracotta" data-suggest-date>Suggest a date <span>↗</span></button><p class="suggestion-result" id="suggestion-result"></p>
+          </div>
+          <div class="planning-tip"><span class="tip-mark">z</span><p><strong>Small is still a plan.</strong><br>A 30-minute shoot counts. So does one honest take.</p></div>
+        </div>
+
+        <section class="calendar-card reveal-fade">
+          <div class="calendar-card-top"><div><span class="small-label">YOUR RHYTHM</span><h2 id="calendar-title">September <span>2026</span></h2></div><div class="month-actions"><button type="button" class="circle-button" data-month-prev aria-label="Previous month">←</button><button type="button" class="circle-button" data-month-next aria-label="Next month">→</button></div></div>
+          <div class="calendar-key"><span><i class="key-dot dot-shoot"></i>shoot</span><span><i class="key-dot dot-edit"></i>edit</span><span><i class="key-dot dot-publish"></i>publish</span><span><i class="festival-mark"></i>festival focus</span></div>
+          <div class="calendar-week-labels" aria-hidden="true"><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span></div>
+          <div class="calendar-grid" id="calendar-grid" aria-label="Content calendar"></div>
+          <div class="calendar-card-bottom"><span><i class="selected-key"></i><b id="calendar-selected-label">03 Sep</b> selected</span><button class="button button-outline small-button" type="button" data-add-shoot>Add a shoot <span>+</span></button></div>
+        </section>
+      </section>
+
+      <section class="calendar-bottom reveal-up"><div><span class="small-label">A SOFTER WAY TO PLAN</span><h2>Make space for<br>the <em>unexpected.</em></h2></div><p>Your calendar is not a test of discipline. It is a little promise to the idea you want to keep alive.</p><a class="button button-outline" href="script-studio.html" data-transition>Write the script first <span>↗</span></a></section>
+      <footer class="studio-footer"><span>zimzim / 04—04</span><a href="script-studio.html" class="page-link" data-transition>shape the story next <b>↗</b></a></footer>
+    </main>
+  </div>
+  <div class="toast" role="status" aria-live="polite" aria-atomic="true"><span class="toast-mark">z</span><span class="toast-message">Saved</span></div>
+  <script src="script.js" defer></script>
+</body>
+</html>

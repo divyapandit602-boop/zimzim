@@ -1,0 +1,4 @@
+# User-uploaded source files are kept out of the public static build
+/uploads/
+*.jfif
+.DS_Store

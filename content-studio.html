@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f2eb">
+  <meta name="description" content="Your calm zimzim workspace for scripts, shoot planning and content ideas.">
+  <title>zimzim — Your Workspace</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="animations.css">
+</head>
+<body class="page-workspace" data-page="workspace">
+  <a class="skip-link" href="#workspace-content">Skip to content</a>
+  <div class="route-wash" aria-hidden="true"></div>
+  <div class="workspace-shell">
+    <header class="workspace-header page-pad">
+      <a class="wordmark" href="index.html" aria-label="zimzim home">zimzim</a>
+      <nav class="workspace-nav" aria-label="Workspace navigation">
+        <a href="script-studio.html" class="page-link" data-transition>Script Lab</a>
+        <a href="content-calendar.html" class="page-link" data-transition>Content Calendar</a>
+        <span class="nav-divider" aria-hidden="true"></span>
+        <button type="button" class="vibe-chip" data-change-vibe><i></i><span data-vibe-name>Millennial</span><b>change</b></button>
+      </nav>
+    </header>
+
+    <main id="workspace-content" class="workspace-main page-pad">
+      <section class="workspace-welcome reveal-up">
+        <div>
+          <p class="eyebrow"><span></span> Your creative room / <b data-vibe-name>Millennial</b></p>
+          <h1>What do you want<br>to <em>make</em> today?</h1>
+          <p>Start messy. zimzim will help you find the shape.</p>
+        </div>
+        <div class="workspace-date"><span>THURSDAY</span><strong>03</strong><span>SEP 2026</span></div>
+      </section>
+
+      <section class="workspace-choices" aria-label="Choose a workspace">
+        <a class="workspace-card script-card reveal-fade" href="script-studio.html" data-transition>
+          <div class="workspace-card-top"><span class="card-index">01 / MAKE</span><span class="soft-pill">AI-assisted</span></div>
+          <div class="workspace-card-art script-art" aria-hidden="true"><span class="art-line line-a"></span><span class="art-line line-b"></span><span class="art-line line-c"></span><span class="art-diamond"></span><span class="art-spark">✳</span></div>
+          <div class="workspace-card-copy"><p>zimzim AI / Script Lab</p><h2>Drop your rough<br>thoughts. <em>Leave with a script.</em></h2><span class="card-link">Open Script Lab <b>↗</b></span></div>
+        </a>
+        <a class="workspace-card calendar-card reveal-fade" href="content-calendar.html" data-transition>
+          <div class="workspace-card-top"><span class="card-index">02 / PLAN</span><span class="soft-pill">gentle planning</span></div>
+          <div class="calendar-art" aria-hidden="true"><span class="calendar-month">SEP <b>2026</b></span><span class="calendar-week"><i></i><i></i><i class="active"></i><i></i><i></i><i></i><i></i></span><span class="calendar-days"><b>01</b><b>02</b><b class="today">03</b><b>04</b><b>05</b><b>06</b><b>07</b></span></div>
+          <div class="workspace-card-copy"><p>zimzim / Content Calendar</p><h2>Know your shoot date.<br><em>Or let us help you find one.</em></h2><span class="card-link">Plan your rhythm <b>↗</b></span></div>
+        </a>
+      </section>
+
+      <section class="workspace-lower reveal-up">
+        <div class="lower-heading"><p class="eyebrow"><span></span> Keep the thread</p><h2>Recent work</h2></div>
+        <div class="recent-list">
+          <a href="script-studio.html" class="recent-item page-link" data-transition><span class="recent-type type-script">SCRIPT</span><span><strong>Why the first three seconds matter</strong><small>Edited yesterday / 42 words</small></span><b>↗</b></a>
+          <a href="content-calendar.html" class="recent-item page-link" data-transition><span class="recent-type type-calendar">PLAN</span><span><strong>September shoot rhythm</strong><small>Updated 03 Sep / 4 dates</small></span><b>↗</b></a>
+          <a href="script-studio.html" class="recent-item page-link" data-transition><span class="recent-type type-note">NOTE</span><span><strong>Street colours / visual language</strong><small>Saved 31 Aug / moodboard</small></span><b>↗</b></a>
+        </div>
+      </section>
+
+      <section class="workspace-note"><span class="note-mark">z</span><p><strong>zimzim is here to reduce the blank page.</strong><br>Not to make your voice sound like anyone else.</p><span class="note-line"></span><span class="note-caption">03—04 / MAKE WITH INTENT</span></section>
+      <footer class="workspace-footer"><span>zimzim / Indian content creation workspace</span><span>quiet tools for clear voices</span></footer>
+    </main>
+  </div>
+  <div class="toast" role="status" aria-live="polite" aria-atomic="true"><span class="toast-mark">z</span><span class="toast-message">Saved</span></div>
+  <script src="script.js" defer></script>
+</body>
+</html>

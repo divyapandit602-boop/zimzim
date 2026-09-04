@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f2eb">
+  <meta name="description" content="zimzim AI Script Lab turns rough notes into a ready-to-shoot script.">
+  <title>zimzim — AI Script Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="animations.css">
+</head>
+<body class="page-script" data-page="script">
+  <a class="skip-link" href="#script-content">Skip to content</a>
+  <div class="route-wash" aria-hidden="true"></div>
+  <div class="studio-shell">
+    <header class="studio-topbar page-pad">
+      <div class="topbar-left"><a class="wordmark" href="index.html" aria-label="zimzim home">zimzim</a><span class="crumb-line"></span><a href="content-studio.html" class="topbar-crumb page-link" data-transition>workspace</a><span class="crumb-slash">/</span><strong>script lab</strong></div>
+      <nav class="topbar-nav" aria-label="Studio navigation"><a class="is-current" href="script-studio.html">Script Lab</a><a href="content-calendar.html" class="page-link" data-transition>Content Calendar</a><button class="vibe-chip" type="button" data-change-vibe><i></i><span data-vibe-name>Millennial</span><b>change</b></button></nav>
+    </header>
+
+    <main id="script-content" class="script-main page-pad">
+      <section class="script-heading reveal-up"><div><p class="eyebrow"><span></span> zimzim AI / your first draft</p><h1>Tell me what<br>you <em>worked on.</em></h1><p>Give me the rough version. I will find the hook, the turn and the words that sound like you.</p></div><div class="lab-steps"><span class="is-active"><b>01</b> tell it</span><i></i><span><b>02</b> shape it</span><i></i><span><b>03</b> shoot it</span></div></section>
+
+      <section class="script-lab-layout">
+        <form class="brief-card reveal-fade" id="script-form">
+          <div class="brief-card-heading"><div><span class="small-label">START HERE</span><h2>Your rough notes</h2></div><span class="ai-badge"><i></i> zimzim AI <b data-vibe-mode>Millennial mode</b></span></div>
+          <label class="field-label" for="raw-notes">What did you work on today?</label>
+          <textarea id="raw-notes" name="notes" rows="7" placeholder="I shot a video about…\n\nIt should feel like…\n\nThe one thing I want people to remember is…"></textarea>
+          <button class="help-link" type="button" data-not-sure><span>?</span> Not sure what to write? Start from zero.</button>
+          <div class="field-grid">
+            <div class="field-group"><label class="field-label" for="content-format">Make it for</label><select id="content-format" name="format"><option value="reel">Instagram reel</option><option value="carousel">Carousel</option><option value="youtube">YouTube short</option><option value="caption">Caption</option></select></div>
+            <div class="field-group"><label class="field-label" for="content-language">Write in</label><select id="content-language" name="language"><option value="hinglish">Hinglish</option><option value="hindi">Hindi</option><option value="english">English</option></select></div>
+          </div>
+          <div class="field-group"><span class="field-label">What should it feel like?</span><div class="choice-row" role="group" aria-label="Choose a tone"><button type="button" class="choice is-selected" data-tone="warm">Warm</button><button type="button" class="choice" data-tone="bold">Bold</button><button type="button" class="choice" data-tone="cinematic">Cinematic</button><button type="button" class="choice" data-tone="playful">Playful</button></div></div>
+          <div class="field-grid last-grid"><div class="field-group"><label class="field-label" for="audience">Who is it for?</label><input id="audience" name="audience" type="text" placeholder="e.g. first-time creators"></div><div class="field-group"><label class="field-label" for="duration">Length</label><select id="duration" name="duration"><option value="short">30–45 seconds</option><option value="medium">60 seconds</option><option value="long">90 seconds</option></select></div></div>
+          <button class="button button-solid generate-button" type="submit"><span class="button-spark">✦</span> Generate my script <span>↗</span></button>
+          <p class="privacy-note"><span></span> Your notes stay in this browser for this demo.</p>
+        </form>
+
+        <section class="output-card reveal-fade" aria-live="polite">
+          <div class="output-top"><div><span class="small-label">YOUR READY-TO-SHOOT DRAFT</span><h2>Script <span id="output-format">outline</span></h2></div><div class="output-actions"><button type="button" class="icon-text-button" data-copy-output aria-label="Copy generated script">copy</button><button type="button" class="icon-text-button" data-save-output aria-label="Save generated script">save</button></div></div>
+          <div class="output-meta"><span class="status-dot"></span><span id="output-status">Waiting for your first thought</span><span class="meta-spacer"></span><span id="output-time">—</span></div>
+          <div class="output-body" id="script-output">
+            <div class="output-empty"><div class="empty-circle"><span></span><span></span><span></span></div><h3>Your script will arrive here.</h3><p>Once you share the messy version, zimzim will shape a hook, a clear middle and an ending worth staying for.</p><button type="button" class="text-button" data-use-sample>Try a sample idea <span>↗</span></button></div>
+          </div>
+          <div class="output-foot"><span>zimzim AI / draft 01</span><span>edit anything. keep what feels true.</span></div>
+        </section>
+      </section>
+
+      <section class="prompt-strip reveal-up"><div class="prompt-symbol">z</div><div><span class="small-label">A LITTLE PROMPT</span><p>What did you notice today that somebody else might have walked past?</p></div><button type="button" class="text-button" data-not-sure>use this prompt <span>→</span></button></section>
+      <footer class="studio-footer"><span>zimzim / 04—04</span><a href="content-calendar.html" class="page-link" data-transition>plan the shoot next <b>↗</b></a></footer>
+    </main>
+  </div>
+  <div class="toast" role="status" aria-live="polite" aria-atomic="true"><span class="toast-mark">z</span><span class="toast-message">Saved</span></div>
+  <script src="script.js" defer></script>
+</body>
+</html>
